@@ -1,5 +1,5 @@
 # Momentum-Multiply
-Demo Checkin App for Momentum Multiply. 
+Checkin App for Momentum Multiply. 
 
 To run app on MAC need:
 
