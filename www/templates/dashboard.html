@@ -1,0 +1,58 @@
+
+<ion-view class="dashboard-page" cache-view="false" can-swipe-back="false">
+    <ion-header-bar class="bar-header bar-light">
+        <h1 class="title">{{user.first_name}} {{user.last_name}}</h1>
+    </ion-header-bar>
+    <ion-header-bar class="bar bar-subheader">
+        <div class="points-panel">
+            <div class="row">
+                <div class="col col-50">
+                    <div class="circle-block">
+                        <div class="circle"></div>
+                        <div class="bg"></div>
+                        <div class="number">0</div>
+                        <div class="text">this month</div>
+                    </div>
+                </div>
+                <div class="col col-50">
+                    <div class="latest-checkin-block">
+                        <div class="text">latest check-in</div>
+                        <ul class="latest-checkin-list">
+                            <li class="date"><i></i> {{checkinDate}}</li>
+                            <li class="time"><i></i> {{checkinTime}}</li>
+                            <li class="gym-name"><i></i> {{checkinName}}</li>
+                            <li class="submited-points"><i></i> {{checkinPoints}}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="dashboard-list-header">last 10 check-ins</div>
+    </ion-header-bar>
+
+    <ion-content class="content" class="has-header has-subheader">
+        <div class="dashboard-list">
+
+            <ul>
+                <li ng-repeat="item in lastCheckin | orderBy:'-date_stamp' | limitTo: 10">
+                    <div class="row item">
+                        <div class="col col-10 icon"><i ng-class="{'orange': item.prevMonth}"></i></div>
+                        <div class="col col-70 description">
+                            <div class="title">{{item.date}}</div>
+                            <div class="timeAndName">
+                                <span class="time"><i></i> {{item.time}}</span>
+                                <span class="name"><i></i> {{item.name}}</span>
+                            </div>
+                        </div>
+                        <div class="col col-20 points" ng-class="{'orange2': item.prevMonth}"><i></i> {{item.points}}</div>
+                    </div>
+                </li>
+            </li>
+
+
+
+            </ul>
+        </div>
+    </ion-content>
+
+</ion-view>

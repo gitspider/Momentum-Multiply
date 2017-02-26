@@ -1,0 +1,20 @@
+
+<ion-view hide-nav-bar="true" class="checkin-page" >
+    <div class="bluetooth-panel">
+        <div class="oval-block">
+            <div class="oval">
+                <div class="points_block" ng-show="checkinOpen">
+                    <div class="icon"></div>
+                    <div class="points">{{points}}</div>
+                </div>
+                <div class="tick" ng-show="!checkinOpen"></div>
+            </div>
+            <div class="info-block ios">
+                <p class="text-center">Welcome to {{gym_name}},<br />would you like to check-in?</p>
+                <div class="block-with-switch text-center next-button-block">
+                    <button class="button button-block" ng-click="checkin()" ng-disabled="!checkinOpen">Check-in</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</ion-view>

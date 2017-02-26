@@ -1,0 +1,43 @@
+
+<ion-view hide-nav-bar="true" class="login-page" >
+    <!--<ion-content class="content" scroll="false">-->
+    <!--<ion-content class="content">-->
+        <div class="logo"></div>
+
+        <div class="login-form" ng-hide="usersuccesAuth">
+            <form name="loginForm" ng-submit="subForm(loginForm)" novalidate>
+                <div class="form-group-block">
+                    <div class="form-group-input">
+                        <input
+                                ng-class="{'noValidate': loginForm.number.$invalid && !loginForm.number.$pristine}"
+                                type="number" placeholder="Multply Number" name="number" ng-model="login.number" minlength="3" required />
+                    </div>
+                    <div class="form-group-error" ng-class="{'form-group-error-show':userError}">
+                        No account by this number found.
+                    </div>
+                </div>
+
+                <button class="button button-assertive" ng-disabled="loginForm.$invalid || checkUser">
+                    <svg class="spinner" ng-class="{'hiddenElement': !checkUser}" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+                        <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+                    </svg>
+                    <span ng-class="{'showElement': checkUser}"  >Sign In</span>
+                </button>
+            </form>
+        </div>
+        <div class="success-block" ng-hide="!usersuccesAuth">
+            <div class="UsernameTextBlock">
+                <div class="areyou">Are you</div>
+                <div class="username">{{user.first_name}} {{user.last_name}}?</div>
+            </div>
+            <div class="row blockWithButtons ">
+                <div class="col ButtonBack">
+                    <button class="button button-positive" ng-click="backToLogin()">Back</button>
+                </div>
+                <div class="col ButtonYes">
+                    <button class="button button-assertive" ng-click="acceptLogin()">Yes</button>
+                </div>
+            </div>
+        </div>
+    <!--</ion-content>-->
+</ion-view>

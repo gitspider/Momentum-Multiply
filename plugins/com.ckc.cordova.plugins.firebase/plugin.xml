@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="com.ckc.cordova.plugins.firebase"
+    version="1.0.0">
+
+    <name>FireBasePlugin</name>
+    <description>You can use the FireBase plugin to use Disk Persistensy Feature of Firebase.</description>
+    <license>MIT</license>
+    <author>LSH</author>
+    <keywords>Phonegap, Firebase, Disk Persistensy, iOS</keywords>
+
+    <repo>https://github.com/HelloCrowd/Native-Firebase-Plugin.git</repo>
+    <issue>https://github.com/HelloCrowd/Native-Firebase-Plugin/issues</issue>
+
+    <engines>
+        <engine name="cordova" version=">=3.0.0" />
+    </engines>
+
+    <js-module src="www/firebase.js" name="FireBase">
+        <clobbers target="com.ckc.cordova.plugins.firebase" />
+    </js-module>
+
+    <!-- ios -->
+    <platform name="ios">
+        <!-- Cordova >= 2.8 -->
+        <config-file target="config.xml" parent="/*">
+            <feature name="FireBase">
+                <param name="ios-package" value="CDVFirebase" />
+            </feature>
+        </config-file>
+
+        <!-- <resource-file src="src/ios/Firebase.framework" /> -->
+        <!-- <resource-file src="src/ios/Firebase.framework" /> -->
+
+        <header-file src="src/ios/FireBase.h" />
+        <source-file src="src/ios/FireBase.m" />
+
+        <framework src="libicucore.dylib" />
+        <framework src="libc++.dylib" />
+        <framework src="CFNetwork.framework" />
+        <framework src="Security.framework" />
+        <framework src="SystemConfiguration.framework" />
+        <framework src="src/ios/Firebase.framework" custom="true" />
+    </platform>
+    <platform name="android">      
+        <!-- register plugin -->      
+        <config-file parent="/widget" target="res/xml/config.xml">        
+            <feature name="FireBase">
+                <param name="android-package" value="com.phonegap.plugins.Firebase.CDVFirebase"/>
+            </feature>        
+        </config-file>      
+        
+        <!-- add permissions in AndroidManifest.xml file-->      
+        <config-file parent="/manifest" target="AndroidManifest.xml">        
+            <!-- <uses-permission android:name="android.permission.CAMERA"/> -->
+            <!-- <uses-permission android:name="android.permission.VIBRATE"/> -->
+            <uses-permission android:name="android.permission.INTERNET"/>
+        </config-file>
+        
+        <!-- add ScanditSDK Activity to the "application" section of AndroidManifest.xml file -->      
+        <config-file parent="/manifest/application" target="AndroidManifest.xml">        
+            <!-- <activity android:name="com.Firebase.plugin.FirebaseActivity"/>  -->
+        </config-file>      
+        
+        <!-- copy Firebase SDK libs -->      
+        <source-file src="src/android/libs/firebase-client-android-2.4.0.jar" target-dir="libs"/>
+          
+        <!-- add plugin source code -->      
+        <source-file src="src/android/com/phonegap/plugins/Firebase/CDVFirebase.java" target-dir="src/com/phonegap/plugins/Firebase"/>
+    </platform>
+</plugin>

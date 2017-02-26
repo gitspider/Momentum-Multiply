@@ -1,0 +1,35 @@
+{
+  "name": "phonegap-firebase-plugin",
+  "version": "1.0.0",
+  "description": "You can use the FireBase plugin to use Disk Persistensy Feature of Firebase.",
+  "cordova": {
+    "id": "com.ckc.cordova.plugins.firebase",
+    "platforms": [
+      "ios"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ersin88888/FirebasePlugin.git"
+  },
+  "keywords": [
+    "Phonegap",
+    "Firebase",
+    "Disk Persistensy",
+    "iOS",
+    "ecosystem:cordova",
+    "cordova-ios"
+  ],
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.0.0"
+    }
+  ],
+  "author": "CKC",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ersin88888/FirebasePlugin/issues"
+  },
+  "homepage": "https://github.com/ersin88888/FirebasePlugin#readme"
+}

@@ -1,0 +1,44 @@
+{
+  "name": "momentummultiply",
+  "version": "1.0.0",
+  "description": "MomentumMultiply: An Ionic project",
+  "dependencies": {
+    "gulp": "^3.5.6",
+    "gulp-sass": "^2.0.4",
+    "gulp-concat": "^2.2.0",
+    "gulp-minify-css": "^0.3.0",
+    "gulp-rename": "^1.2.0"
+  },
+  "devDependencies": {
+    "bower": "^1.3.3",
+    "gulp-util": "^2.2.14",
+    "shelljs": "^0.3.0"
+  },
+  "cordovaPlugins": [
+    "cordova-plugin-device",
+    "cordova-plugin-whitelist",
+    "cordova-plugin-splashscreen",
+    "cordova-plugin-statusbar",
+    "ionic-plugin-keyboard",
+    "cordova-plugin-ble-central",
+    "org.apache.cordova.statusbar",
+    {
+      "locator": "/Users/wog/Downloads/cordova-plugin-ibeacon-master",
+      "id": "com.unarin.cordova.beacon"
+    },
+    "org.apache.cordova.network-information",
+    "cordova-plugin-console",
+    {
+      "locator": "https://github.com/willyboy/cordova-plugin-local-notifications.git",
+      "id": "de.appplant.cordova.plugin.local-notification-ios9-fix"
+    },
+    {
+      "locator": "https://github.com/HelloCrowd/Native-Firebase-Plugin.git",
+      "id": "com.ckc.cordova.plugins.firebase"
+    }
+  ],
+  "cordovaPlatforms": [
+    "ios",
+    "android"
+  ]
+}

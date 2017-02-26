@@ -1,0 +1,26 @@
+
+<ion-view hide-nav-bar="true" class="bluetooth-page" >
+    <div class="bluetooth-panel">
+        <div class="oval-block">
+            <div class="oval"></div>
+            <div class="info-block Android" ng-show="android">
+                <p class="text-center">Please keep your bluetooth switched on.</p>
+                <div class="block-with-switch text-center">
+                    Switch bluetooth on
+                    <label class="toggle" >
+                        <input type="checkbox" ng-model="EnabledBLE" checked="EnabledBLE" ng-change="bluetoothChange()">
+                        <div class="track">
+                            <div class="handle"></div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+            <div class="info-block ios" ng-show="!android">
+                <p class="text-center">Please switch your bluetooth ON <br />to use this app.</p>
+                <div class="block-with-switch text-center next-button-block">
+                    <button class="button button-block" ng-click="checkBLEenabled()">Next</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</ion-view>
